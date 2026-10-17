@@ -1,0 +1,92 @@
+<Defs>
+  <ThingDef ParentName="StorageShelfBase">
+    <defName>SL_LogisticOutput</defName>
+    <label>pick-up point shelf</label>
+    <description>A shelf used as a designated pick-up point in the local colony logistical network.\n\n&lt;color=#eee55d&gt;Instructions&lt;/color&gt;\nCrafters can grab items from your stockpile as long as your stockpile has shelves with a storage designation signpost.\n\nCrafters will only grab items which are within the ingredient radius you've set on their crafting stations (defaults to be unlimited).\n\n&lt;color=#eee655&gt;FAQ&lt;/color&gt;\n&lt;color=#8888CC&gt;How is this logistics solution performance wis- HEY!? Why is my question &lt;b&gt;&lt;color=#ff5555&gt;C&lt;/color&gt;&lt;color=#ff7f55&gt;O&lt;/color&gt;&lt;color=#ffff55&gt;L&lt;/color&gt;&lt;color=#55ff55&gt;O&lt;/color&gt;&lt;color=#5588ff&gt;U&lt;/color&gt;&lt;color=#5555ff&gt;R&lt;/color&gt;&lt;color=#cc55ff&gt;E&lt;/color&gt;&lt;color=#ff55aa&gt;D&lt;/color&gt;&lt;/b&gt;? Is this &lt;b&gt;VIBE CODED&lt;/b&gt;!? ARE YOU PATCHING Thing.DoTick()?"&lt;/color&gt;\n\nNo need to be alarmed strawperson! The mod is fully written by non-mechanical lifeforms and should improve performance; Less expensive long-distance pathfinding updates etc.\n\nLanguage models seem to horribly abuse text colour and sensibly decided... I needed to prove I can abuse it even worse.\n\nYou're welcome!</description>
+    <graphicData>
+      <texPath>Buildings/MagicShelf</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <costStuffCount>60</costStuffCount>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints> 
+      <Mass>8</Mass>
+      <WorkToBuild>500</WorkToBuild>
+    </statBases>
+    <size>(2,1)</size>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <building>
+      <fixedStorageSettings>
+        <filter>
+          <categories Inherit="False"/>
+        </filter>
+      </fixedStorageSettings>
+      <relatedBuildCommands>
+        <li>SL_LogisticDepot</li>
+      </relatedBuildCommands>
+    </building>
+    <researchPrerequisites Inherit="false"/>
+    <comps>
+      <li Class="Shelf.CompProperties_LogisticsOutput">
+        <compClass>Shelf.LogisticsOutputComp</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>SL_LogisticDepot</defName>
+    <label>storage designation</label>
+    <thingClass>Shelf.LogisticsDepot</thingClass>
+    <description>A sign-post designating storage facilities nearby to be administered by the colony's logistical network.\n\n&lt;color=#eee55d&gt;Instructions&lt;/color&gt;\nAdds any items on shelves in range to the logistic system so they can be retrieved at pick-up points.\n\nThis lets items be picked up by crafters to use on most standard crafting station near a pickup point.\n\n&lt;color=#8888CC&gt;"Okay, but how is it getting to the pick-up point?"&lt;/color&gt;\n\nWell, you see your bartender knew he needed about 10 fruits for his customers on an average Tuesday and simply planned ahead.\n\n&lt;color=#8888CC&gt;"The pick-up point is empty though."&lt;/color&gt;\n\nNo it isn't.\n\n&lt;color=#8888CC&gt;"I literally saw half a stack of potatoes vanish from storage and appear magically appear on the shelf when my cook was working. Is this a magic mod?"&lt;/color&gt;\n\nNot at all this is just mundane everyday logistics mod. Your colonists are planning ahead.\n\n&lt;color=#8888CC&gt;"I can see items teleporting!"&lt;/color&gt;\n\nYou're just imagining things. This is a perfectly mundane sign post. You craft it from mundane materials like wood, stone, D-38, and steel.\n\n&lt;color=#8888CC&gt;"Am I being gaslighted by dantian-destroying damned mod authors now?"&lt;/color&gt;\n\nIt is probably Oscar's fault somehow. Blame him. Take your justified vengeance by sending him error reports logs for his '&lt;color=#CCAA33&gt;&lt;b&gt;VE Outposts - Mechanoid Pregnancy+&lt;/b&gt;&lt;/color&gt;' mod with like 200 anime mods! That'll show the smug bastard!\n\n&lt;color=#9966CC&gt;"You're damn right I will! Tonight ends his &lt;color=#CC33AA&gt;&lt;b&gt;Horaxian&lt;/b&gt;&lt;/color&gt; conspiracy with Turtleshroom!"&lt;/color&gt;</description>
+    <graphicData>
+      <texPath>Buildings/TeleportationSign_grey</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.2, 0.5, 0.2)</volume>
+        <offset>(0,0,-0.23)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.25,0.6,0.5,0.2)</rect>
+      </damageData>
+    </graphicData>
+    <thingCategories>
+      <li>BuildingsFurniture</li>
+    </thingCategories>
+    <building>
+      <relatedBuildCommands>
+        <li>SL_LogisticOutput</li>
+      </relatedBuildCommands>
+    </building>
+    <altitudeLayer>Building</altitudeLayer>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>800</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Mass>5</Mass>
+    </statBases>
+    
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <fillPercent>0.5</fillPercent>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>25</costStuffCount>
+    <pathCost>14</pathCost>
+    <designationCategory>Misc</designationCategory>
+    <uiOrder>2101</uiOrder>
+    <rotatable>false</rotatable>
+    <placeWorkers>
+      <li>Shelf.PlaceWorker_LogisticsDepot</li>
+    </placeWorkers>
+    <researchPrerequisites Inherit="false"/>
+  </ThingDef>
+</Defs>

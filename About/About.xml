@@ -1,0 +1,39 @@
+<ModMetaData>
+	<name>Shelf Stack Logistics Reworked</name>
+  <packageId>RedMattis.ShelfLogistics</packageId>
+	<author>RedMattis</author>
+	<supportedVersions>
+		<li>1.6</li>
+    <li>1.7</li>
+	</supportedVersions>
+	<modVersion>1.0.0.0</modVersion>
+	<modIconPath IgnoreIfNoMatchingField="True">BS_ModIcon</modIconPath>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>Ludeon.RimWorld.Anomaly</li>
+    <li>Ludeon.RimWorld.Odyssey</li>
+		<li>brrainz.harmony</li>
+    <li>rebuild.cotr.doorsandcorners</li>
+	</loadAfter>
+	<loadBefore>
+	</loadBefore>
+	<incompatibleWith/>
+	
+	<description>Adds a "pick-up point" shelf from which crafters of most types of worktables can retrieve anything on a shelf near a "storage designation" sign. Similar to how a Trade Beacon lets trade ships buy from your colony.
+
+This means you can have a barkeep grab food items from a central freezer on the other side of your base.
+
+The intent of the mod is to enable those who like building large pretty bases which otherwise tend to be hindered by hauling time..</description>
+
+</ModMetaData>
